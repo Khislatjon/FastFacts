@@ -6,25 +6,28 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct DetailView: View {
     @State private var article: Article
     @State var question = ""
     @State var viewModel = DetailViewModel()
-    @FocusState var isInputActive: Bool
     @State private var showSheet = false
+    let synthesizer = AVSpeechSynthesizer()
     
     init(article: Article) {
         self._article = State(initialValue: article)
     }
     
     var body: some View {
-        TextEditor(text: $article.body)
-            .focused($isInputActive)
+        AttributedTextEditor(text: $article.body, answer: $viewModel.answer, foundAnswer: { answer in
+            let utterance = AVSpeechUtterance(string: answer)
+            self.synthesizer.speak(utterance)
+        })
+        .padding(.horizontal)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
-                    isInputActive = false
                     showSheet.toggle()
                 } label: {
                     Text("Ask")
