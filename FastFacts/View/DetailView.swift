@@ -34,6 +34,9 @@ struct DetailView: View {
                 }
             }
         }
+        .onDisappear {
+            self.synthesizer.stopSpeaking(at: .word)
+        }
         .sheet(isPresented: $showSheet) {
             QuestionView(question: $question)
                 .onDisappear {

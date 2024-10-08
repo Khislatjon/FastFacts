@@ -72,7 +72,7 @@ struct AttributedTextEditor: UIViewRepresentable {
         let bodyFont = UIFontMetrics(forTextStyle: .body).scaledFont(for: helveticaNeue17)
         
         let mutableAttributedText = NSMutableAttributedString(string: text,
-                                                              attributes: [.foregroundColor: UIColor.black,
+                                                              attributes: [.foregroundColor: UIColor(Color.primary),
                                                                            .font: bodyFont])
         
         guard !answer.isEmpty else { return (mutableAttributedText, nil) }
@@ -80,7 +80,7 @@ struct AttributedTextEditor: UIViewRepresentable {
         let nsText: NSString = text as NSString
         let answerRange: NSRange = nsText.range(of: answer)
         mutableAttributedText.addAttributes([.backgroundColor: UIColor.systemOrange,
-                                             .foregroundColor: UIColor.white], range: answerRange)
+                                             .foregroundColor: UIColor(Color.primary)], range: answerRange)
         
         self.foundAnswer?(answer)
         

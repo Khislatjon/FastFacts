@@ -28,6 +28,8 @@ class BERT {
     func findAnswer(for question: String, in document: String) -> Substring {
         // Prepare the input for the BERT model.
         let bertInput = BERTInput(documentString: document, questionString: question)
+        print("maxTokens: \(BERTInput.maxTokens)")
+        print("totalTokenSize: \(bertInput.totalTokenSize)")
         
         guard bertInput.totalTokenSize <= BERTInput.maxTokens else {
             var message = "Text and question are too long"
