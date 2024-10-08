@@ -64,3 +64,5 @@ DerivedData
 # Pods/
 Podfile.lock
 Package.resolved
+
+BERTQAFP16.mlmodel

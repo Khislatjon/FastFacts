@@ -8,16 +8,23 @@
 import SwiftUI
 
 struct DetailView: View {
-    let article: Article
+    @State private var article: Article
+    @State var question = ""
+    @State var viewModel = DetailViewModel()
+    @FocusState var isInputActive: Bool
     @State private var showSheet = false
     
+    init(article: Article) {
+        self._article = State(initialValue: article)
+    }
+    
     var body: some View {
-        Button("Ask a question sheet") {
-            showSheet = true
-        }
+        TextEditor(text: $article.body)
+            .focused($isInputActive)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
+                    isInputActive = false
                     showSheet.toggle()
                 } label: {
                     Text("Ask")
@@ -25,7 +32,13 @@ struct DetailView: View {
             }
         }
         .sheet(isPresented: $showSheet) {
-            QuestionView()
+            QuestionView(question: $question)
+                .onDisappear {
+                    if !question.isEmpty {
+                        viewModel.findAnswer(searchText: question, article: article)
+                        question = ""
+                    }
+                }
         }
     }
 }

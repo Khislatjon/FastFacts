@@ -24,6 +24,14 @@
 		0EB021102CB54D3E00488E58 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0210F2CB54D3E00488E58 /* ArticleViewModel.swift */; };
 		0EB021132CB5502300488E58 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB021122CB5502300488E58 /* DetailView.swift */; };
 		0EB021152CB550A000488E58 /* InnerHeightPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB021142CB550A000488E58 /* InnerHeightPreferenceKey.swift */; };
+		0EB0211D2CB5725800488E58 /* BERTInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB021162CB5725300488E58 /* BERTInput.swift */; };
+		0EB0211F2CB5725800488E58 /* BERT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB021182CB5725800488E58 /* BERT.swift */; };
+		0EB021202CB5725800488E58 /* bert-base-uncased-vocab.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0EB021192CB5725800488E58 /* bert-base-uncased-vocab.txt */; };
+		0EB021212CB5725800488E58 /* BERTOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0211A2CB5725800488E58 /* BERTOutput.swift */; };
+		0EB021222CB5725800488E58 /* BERTVocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0211B2CB5725800488E58 /* BERTVocabulary.swift */; };
+		0EB021232CB5725800488E58 /* TokenizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0211C2CB5725800488E58 /* TokenizedString.swift */; };
+		0EB021252CB572B800488E58 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB021242CB572B800488E58 /* DetailViewModel.swift */; };
+		0EB021292CB57A4300488E58 /* BERTQAFP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0EB021282CB57A4300488E58 /* BERTQAFP16.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +54,14 @@
 		0EB0210F2CB54D3E00488E58 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		0EB021122CB5502300488E58 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		0EB021142CB550A000488E58 /* InnerHeightPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerHeightPreferenceKey.swift; sourceTree = "<group>"; };
+		0EB021162CB5725300488E58 /* BERTInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BERTInput.swift; sourceTree = "<group>"; };
+		0EB021182CB5725800488E58 /* BERT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BERT.swift; sourceTree = "<group>"; };
+		0EB021192CB5725800488E58 /* bert-base-uncased-vocab.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "bert-base-uncased-vocab.txt"; sourceTree = "<group>"; };
+		0EB0211A2CB5725800488E58 /* BERTOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BERTOutput.swift; sourceTree = "<group>"; };
+		0EB0211B2CB5725800488E58 /* BERTVocabulary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BERTVocabulary.swift; sourceTree = "<group>"; };
+		0EB0211C2CB5725800488E58 /* TokenizedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenizedString.swift; sourceTree = "<group>"; };
+		0EB021242CB572B800488E58 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		0EB021282CB57A4300488E58 /* BERTQAFP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BERTQAFP16.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +142,13 @@
 			isa = PBXGroup;
 			children = (
 				0EB0210C2CB54C4500488E58 /* Article.swift */,
+				0EB021282CB57A4300488E58 /* BERTQAFP16.mlmodel */,
+				0EB021192CB5725800488E58 /* bert-base-uncased-vocab.txt */,
+				0EB021182CB5725800488E58 /* BERT.swift */,
+				0EB021162CB5725300488E58 /* BERTInput.swift */,
+				0EB0211A2CB5725800488E58 /* BERTOutput.swift */,
+				0EB0211B2CB5725800488E58 /* BERTVocabulary.swift */,
+				0EB0211C2CB5725800488E58 /* TokenizedString.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -134,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				0EB0210F2CB54D3E00488E58 /* ArticleViewModel.swift */,
+				0EB021242CB572B800488E58 /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -208,6 +232,7 @@
 			files = (
 				0EB020F02CB5307D00488E58 /* Preview Assets.xcassets in Resources */,
 				0EB020ED2CB5307D00488E58 /* Assets.xcassets in Resources */,
+				0EB021202CB5725800488E58 /* bert-base-uncased-vocab.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,15 +246,22 @@
 				0EB020FF2CB53DB000488E58 /* Wave.swift in Sources */,
 				0EB021032CB53E6B00488E58 /* Colors.swift in Sources */,
 				0EB020FA2CB53CB400488E58 /* Views.swift in Sources */,
+				0EB021232CB5725800488E58 /* TokenizedString.swift in Sources */,
+				0EB0211F2CB5725800488E58 /* BERT.swift in Sources */,
 				0EB021132CB5502300488E58 /* DetailView.swift in Sources */,
 				0EB021052CB53F7300488E58 /* AudioPlayerProtocol.swift in Sources */,
 				0EB020FD2CB53D8200488E58 /* MultiWave.swift in Sources */,
+				0EB021252CB572B800488E58 /* DetailViewModel.swift in Sources */,
 				0EB021072CB53FB800488E58 /* SpeechRecognizer.swift in Sources */,
+				0EB021292CB57A4300488E58 /* BERTQAFP16.mlmodel in Sources */,
+				0EB0211D2CB5725800488E58 /* BERTInput.swift in Sources */,
 				0EB020EB2CB5307C00488E58 /* ContentView.swift in Sources */,
 				0EB020F72CB53C6B00488E58 /* QuestionView.swift in Sources */,
 				0EB021102CB54D3E00488E58 /* ArticleViewModel.swift in Sources */,
 				0EB0210D2CB54C4500488E58 /* Article.swift in Sources */,
+				0EB021212CB5725800488E58 /* BERTOutput.swift in Sources */,
 				0EB021152CB550A000488E58 /* InnerHeightPreferenceKey.swift in Sources */,
+				0EB021222CB5725800488E58 /* BERTVocabulary.swift in Sources */,
 				0EB021012CB53E3100488E58 /* AnimationCompletion.swift in Sources */,
 				0EB020E92CB5307C00488E58 /* FastFactsApp.swift in Sources */,
 				0EB0210A2CB54BBF00488E58 /* ArticleView.swift in Sources */,

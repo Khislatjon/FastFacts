@@ -10,8 +10,7 @@ import Speech
 import AVFoundation
 
 struct QuestionView: View, AudioPlayerProtocol {
-    
-    @State var question = ""
+    @Binding var question: String
     @State var questionPlaceholder = "Type your question or record..."
     @State var showAudioPlayerWave = false
     
@@ -258,5 +257,5 @@ extension QuestionView {
 }
 
 #Preview {
-    QuestionView()
+    QuestionView(question: .constant("Question"))
 }
