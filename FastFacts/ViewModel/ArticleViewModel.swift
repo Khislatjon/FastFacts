@@ -8,11 +8,4 @@
 import Foundation
 
 @Observable class ArticleViewModel {
-    var articles: [Article] = [
-        Article(title: "Test")
-    ]
-    
-    func addArticle(_ article: Article) {
-        articles.append(article)
-    }
 }

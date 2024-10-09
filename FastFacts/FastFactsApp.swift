@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct FastFactsApp: App {
@@ -15,6 +16,6 @@ struct FastFactsApp: App {
             NavigationStack {
                 ArticleView()
             }
-        }
+        }.modelContainer(for: Article.self)
     }
 }

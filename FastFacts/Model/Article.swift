@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import SwiftData
 
-struct Article: Identifiable {
+@Model
+class Article: Identifiable {
     let id: String
     var title: String
     var body: String

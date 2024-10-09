@@ -36,6 +36,7 @@ struct DetailView: View {
         }
         .onDisappear {
             self.synthesizer.stopSpeaking(at: .word)
+            self.viewModel.answer = ""
         }
         .sheet(isPresented: $showSheet) {
             QuestionView(question: $question)

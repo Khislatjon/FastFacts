@@ -6,25 +6,30 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ArticleView: View {
     
+    @Environment(\.modelContext) var modelContext
+    @Query var articles: [Article]
     @State private var showAlert = false
-    @State private var article = Article()
+    @State private var newArTitle = ""
     @State var viewModel = ArticleViewModel()
-    
     
     var body: some View {
         List {
-            ForEach(viewModel.articles) { article in
+            ForEach(articles) { article in
                 NavigationLink {
                     DetailView(article: article)
                 } label: {
                     Text(article.title)
                 }
             }
-            .onDelete { viewModel.articles.remove(atOffsets: $0) }
-            .onMove { viewModel.articles.move(fromOffsets: $0, toOffset: $1) }
+            .onDelete { indexes in
+                for index in indexes {
+                    delete(articles[index])
+                }
+            }
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Documents")
@@ -39,16 +44,20 @@ struct ArticleView: View {
             }
         }
         .alert("Add a new file", isPresented: $showAlert) {
-            TextField("Title", text: $article.title)
+            TextField("Title", text: $newArTitle)
             
             Button("Add") {
-                guard !article.title.isEmpty else { return }
-                viewModel.addArticle(article)
-                article = Article()
+                guard !newArTitle.isEmpty else { return }
+                let item = Article(title: newArTitle)
+                modelContext.insert(item)
             }
         } message: {
             Text("The app will save it for future use.")
         }
+    }
+    
+    private func delete(_ article: Article) {
+        modelContext.delete(article)
     }
 }
 

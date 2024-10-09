@@ -157,7 +157,7 @@ extension QuestionView {
     
     func startRecording() {
         self.question = ""
-        let audioFilename = getDocumentsDirectory().appendingPathComponent("recording_phrase.m4a")
+        let audioFilename = getDocumentsDirectory().appendingPathComponent("recording_question.m4a")
         
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
@@ -236,7 +236,7 @@ extension QuestionView {
             print("Access Given")
             
             // Initialize AudioRecorder once access is given
-            let audioFilename = getDocumentsDirectory().appendingPathComponent("recording_phrase.m4a")
+            let audioFilename = getDocumentsDirectory().appendingPathComponent("recording_question.m4a")
             
             let settings = [
                 AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
