@@ -50,6 +50,10 @@ struct ArticleView: View {
                 guard !newArTitle.isEmpty else { return }
                 let item = Article(title: newArTitle)
                 modelContext.insert(item)
+                newArTitle = ""
+            }
+            Button("Cancel") {
+                showAlert = false
             }
         } message: {
             Text("The app will save it for future use.")
