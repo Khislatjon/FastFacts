@@ -33,6 +33,8 @@
 		0EB021252CB572B800488E58 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB021242CB572B800488E58 /* DetailViewModel.swift */; };
 		0EB021292CB57A4300488E58 /* BERTQAFP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0EB021282CB57A4300488E58 /* BERTQAFP16.mlmodel */; };
 		0EB0212B2CB5D80000488E58 /* AttributedTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0212A2CB5D80000488E58 /* AttributedTextEditor.swift */; };
+		0EB021312CC0119800488E58 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB021302CC0119800488E58 /* HistoryView.swift */; };
+		0EB021332CC0123B00488E58 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB021322CC0123B00488E58 /* History.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		0EB021242CB572B800488E58 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		0EB021282CB57A4300488E58 /* BERTQAFP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BERTQAFP16.mlmodel; sourceTree = "<group>"; };
 		0EB0212A2CB5D80000488E58 /* AttributedTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedTextEditor.swift; sourceTree = "<group>"; };
+		0EB021302CC0119800488E58 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		0EB021322CC0123B00488E58 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				0EB0210C2CB54C4500488E58 /* Article.swift */,
+				0EB021322CC0123B00488E58 /* History.swift */,
 				0EB021282CB57A4300488E58 /* BERTQAFP16.mlmodel */,
 				0EB021192CB5725800488E58 /* bert-base-uncased-vocab.txt */,
 				0EB021182CB5725800488E58 /* BERT.swift */,
@@ -171,6 +176,7 @@
 				0EB021092CB54BBF00488E58 /* ArticleView.swift */,
 				0EB021122CB5502300488E58 /* DetailView.swift */,
 				0EB020F62CB53C6B00488E58 /* QuestionView.swift */,
+				0EB021302CC0119800488E58 /* HistoryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -247,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EB020FF2CB53DB000488E58 /* Wave.swift in Sources */,
+				0EB021312CC0119800488E58 /* HistoryView.swift in Sources */,
 				0EB0212B2CB5D80000488E58 /* AttributedTextEditor.swift in Sources */,
 				0EB021032CB53E6B00488E58 /* Colors.swift in Sources */,
 				0EB020FA2CB53CB400488E58 /* Views.swift in Sources */,
@@ -254,6 +261,7 @@
 				0EB0211F2CB5725800488E58 /* BERT.swift in Sources */,
 				0EB021132CB5502300488E58 /* DetailView.swift in Sources */,
 				0EB021052CB53F7300488E58 /* AudioPlayerProtocol.swift in Sources */,
+				0EB021332CC0123B00488E58 /* History.swift in Sources */,
 				0EB020FD2CB53D8200488E58 /* MultiWave.swift in Sources */,
 				0EB021252CB572B800488E58 /* DetailViewModel.swift in Sources */,
 				0EB021072CB53FB800488E58 /* SpeechRecognizer.swift in Sources */,

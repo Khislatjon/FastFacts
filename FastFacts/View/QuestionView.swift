@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Speech
 import AVFoundation
 
 struct QuestionView: View, AudioPlayerProtocol {
@@ -64,12 +63,12 @@ struct QuestionView: View, AudioPlayerProtocol {
                 .font(.subheadline)
                 .fontWeight(.semibold)
                 .hSpacing(.leading)
-                .fixedSize(horizontal: false, vertical: true)
                 
             Text("Start recording your question and it will automatically convert to text")
                 .font(.caption)
                 .fontWeight(.regular)
                 .hSpacing(.leading)
+                .fixedSize(horizontal: false, vertical: true)
             
             ZStack(alignment: .center) {
                 if self.isRecording {

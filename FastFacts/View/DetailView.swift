@@ -12,7 +12,7 @@ struct DetailView: View {
     @State private var article: Article
     @State var question = ""
     @State var viewModel = DetailViewModel()
-    @State private var showSheet = false
+    @State private var showQuestionSheet = false
     let synthesizer = AVSpeechSynthesizer()
     
     init(article: Article) {
@@ -25,27 +25,39 @@ struct DetailView: View {
             self.synthesizer.speak(utterance)
         })
         .padding(.horizontal)
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("Details")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
-                    showSheet.toggle()
+                    showQuestionSheet.toggle()
                 } label: {
-                    Text("Ask")
+                    Image(systemName: "questionmark.app")
+                }
+            }
+            
+            ToolbarItem(placement: .topBarTrailing) {
+                NavigationLink {
+                    HistoryView(article: $article)
+                } label: {
+                    Image(systemName: "clock")
                 }
             }
         }
-        .onDisappear {
-            self.synthesizer.stopSpeaking(at: .word)
-            self.viewModel.answer = ""
-        }
-        .sheet(isPresented: $showSheet) {
+        .sheet(isPresented: $showQuestionSheet) {
             QuestionView(question: $question)
                 .onDisappear {
                     if !question.isEmpty {
                         viewModel.findAnswer(searchText: question, article: article)
-                        question = ""
                     }
                 }
+        }
+        .onChange(of: viewModel.answer) { oldValue, newValue in
+            if oldValue != newValue, !newValue.isEmpty {
+                let history = History(question: self.question, answer: newValue)
+                self.article.histories.append(history)
+                self.question = ""
+            }
         }
     }
 }
