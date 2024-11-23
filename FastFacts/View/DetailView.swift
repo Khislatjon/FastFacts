@@ -13,7 +13,7 @@ struct DetailView: View {
     @State var question = ""
     @State var viewModel = DetailViewModel()
     @State private var showQuestionSheet = false
-    let synthesizer = AVSpeechSynthesizer()
+    static let synthesizer = AVSpeechSynthesizer()
     
     init(article: Article) {
         self._article = State(initialValue: article)
@@ -22,7 +22,9 @@ struct DetailView: View {
     var body: some View {
         AttributedTextEditor(text: $article.body, answer: $viewModel.answer, foundAnswer: { answer in
             let utterance = AVSpeechUtterance(string: answer)
-            self.synthesizer.speak(utterance)
+            let voice = AVSpeechSynthesisVoice(language: "en-GB")
+            utterance.voice = voice
+            DetailView.synthesizer.speak(utterance)
         })
         .padding(.horizontal)
         .navigationBarTitleDisplayMode(.inline)
