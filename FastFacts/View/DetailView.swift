@@ -61,6 +61,9 @@ struct DetailView: View {
                 self.question = ""
             }
         }
+        .onDisappear {
+            viewModel.answer = ""
+        }
     }
 }
 
