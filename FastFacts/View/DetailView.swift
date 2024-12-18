@@ -35,7 +35,9 @@ struct DetailView: View {
                     showQuestionSheet.toggle()
                 } label: {
                     Image(systemName: "questionmark.app")
-                }
+                }.accessibilityAddTraits(.isButton)
+                .accessibilityLabel("Ask a question")
+                .accessibilityHint("Double tap to ask a question")
             }
             
             ToolbarItem(placement: .topBarTrailing) {
@@ -43,7 +45,9 @@ struct DetailView: View {
                     HistoryView(article: $article)
                 } label: {
                     Image(systemName: "clock")
-                }
+                }.accessibilityAddTraits(.isLink)
+                    .accessibilityLabel("See question and answer history")
+                    .accessibilityHint("Double tap to see history of questions and answers")
             }
         }
         .sheet(isPresented: $showQuestionSheet) {

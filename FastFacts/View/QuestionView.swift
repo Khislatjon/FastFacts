@@ -42,7 +42,9 @@ struct QuestionView: View, AudioPlayerProtocol {
                     .foregroundColor(Color.white)
                     .background(Color.appColor)
                     .cornerRadius(16)
-            }
+            }.accessibilityAddTraits(.isButton)
+                .accessibilityLabel("Send your question")
+                .accessibilityHint("Double tap to send your question")
         }
         .padding()
         .overlay {

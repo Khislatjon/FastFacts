@@ -40,6 +40,9 @@ struct ArticleView: View {
                     showAlert.toggle()
                 } label: {
                     Text("Add")
+                        .accessibilityAddTraits(.isButton)
+                        .accessibilityLabel("Add new article")
+                        .accessibilityHint("Double tap to add a new article")
                 }
             }
         }
